@@ -1,6 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 import Blink from './components/Blink'
+import FokinText from './components/TextStyle'
+import BoxFillComponent from './components/BoxFillComponent'
+import BoxFillFlex from './components/BoxFillFlex'
 
 export default class App extends React.Component {
   render() {
@@ -9,9 +12,12 @@ export default class App extends React.Component {
     }
     return (
       <View style={styles.container}>
-        <Text>My name is Eric</Text>
-        <Blink/>
-        {/* <Image source={pic} style={{width: 400, height: 300}}/> */}
+       {/* <FokinText/> */}
+        <Text style={[styles.red]}>My name is Eric</Text>
+       {/* <BoxFillComponent/> */}
+        {/* <Blink/> */}
+        <Image source={pic} style={{width: 400, height: 300}}/>
+        {/* <BoxFillFlex/> */}
         <View style={{alignItems:'center'}}>
           <UnlimitedGreetingWorks name='No'/>
           <UnlimitedGreetingWorks name='Yes'/>
@@ -27,7 +33,7 @@ export default class App extends React.Component {
 class UnlimitedGreetingWorks extends React.Component{
   render() {
     return (
-      <Text>Hello {this.props.name}</Text>
+      <Text style={[styles.bigBlue]}>Hello {this.props.name}</Text>
     );
   }
 }
@@ -39,4 +45,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  bigBlue: {
+    color: 'blue',
+    fontWeight: 'bold',
+    fontSize: 30
+  },
+  red: {
+    color: 'red'
+  }
 });
